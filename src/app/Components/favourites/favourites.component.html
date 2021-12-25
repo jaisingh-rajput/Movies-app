@@ -1,0 +1,56 @@
+<app-navbar></app-navbar>
+<div class="favourite-page">
+    <div class="row">
+        <div class="col-3">
+            <ul class="list-group favourites-generes">
+                <li class="list-group-item active" aria-current="true">All generes</li>
+                <li class="list-group-item">Action</li>
+                <li class="list-group-item">Science Fiction</li>
+                <li class="list-group-item">Adventure</li>
+                <li class="list-group-item">Animation</li>
+                <li class="list-group-item">Horror</li>
+                <li class="list-group-item">Drama</li>
+                <li class="list-group-item">Thriller</li>
+            </ul>
+        </div>
+        <div class="col-9">
+            <div class="table-container">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="searching" placeholder="Search" [(ngModel)]="nameSearch">
+                    <input type="text" class="form-control" placeholder="4">
+                </div>
+                <table class="table table-hover main">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Genre</th>
+                            <th>Popularity</th>
+                            <th>Rating</th>
+                        </tr>
+                    </thead>
+                    <!-- <tbody *ngFor="let j of obj"> -->
+                    <tbody *ngFor="let obj of this.movieArr.movie| paginate:{ id:'favourite_pagination', itemsPerPage:4, currentPage:currentPage,totalItems:totalItems } | searchFilter:nameSearch; let i=index">
+                        <tr>
+                            <th ><img src="https://image.tmdb.org/t/p/original{{obj.backdrop_path}}" class='movie_img'/>{{obj.original_title}}</th>
+                            <td>{{genereids[obj.genre_ids[0]]}}</td>
+                            <td>{{obj.popularity}}</td>
+                            <td>{{obj.vote_average}}</td>
+                            <button type="button" class="btn btn-warning btn-sm" (click)="toDelete(i)">Delete</button>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="favouritepagination">
+    <pagination-controls  id="favourite_pagination" maxSize:any=3 directionLinks:any="true" (pageChange)="pageChange($event)" > </pagination-controls>
+</div>
+    <!-- <nav aria-label="Page navigation example">
+        <ul class="pagination pages">
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+    </nav> -->
+</div>

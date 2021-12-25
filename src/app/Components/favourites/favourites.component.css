@@ -1,0 +1,33 @@
+.favourite-page{
+    background: #161616;
+    
+}
+
+.favourites-generes{
+    margin-top: 40%;
+    margin-left: 20%;
+}
+.table-container{
+    position: relative;
+    margin-top: 10%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+.main{
+    color: white;
+}
+.pages{
+    margin-top: 11%;
+    margin-left: 50%;
+    margin-bottom: 0%;
+}
+.movie_img{
+    width: 120px;
+    height: 70px;
+    margin-right: 15px;
+}
+.favouritepagination{
+    position: relative;
+    margin-top: 5%;
+    margin-left: 40%;
+}

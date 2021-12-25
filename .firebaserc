@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "movies-app-angular-d0598": {
+      "hosting": {
+        "movies-app": [
+          "movies-app-angular-d0598"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "movies-app-angular-d0598"
+  }
+}

@@ -1,0 +1,23 @@
+@import url('http://fonts.cdnfonts.com/css/horror-type');
+.card{
+    width: 100%;
+    max-height: 30%;
+    position: relative;
+    border: 0cm;
+}
+
+.card-bio{
+    position: absolute;
+    bottom: 15vh;
+    left: 5vh;
+}
+.card-title{
+    font-size: 120px;
+    font-family: 'Horror Type', sans-serif;
+    letter-spacing: 5px;
+    color: rgb(112, 2, 2);
+}
+.card-text{
+    font-size: 25px;
+    color: white;
+}

@@ -1,0 +1,42 @@
+<h1>Trending</h1>
+<div class="complete">
+  <div class="main">
+    <div class="container" >
+      <div
+        *ngFor="let items of data | paginate:{ id:'listing_pagination', itemsPerPage:20, currentPage:pagenumber,totalItems: totalRecords} | searchFilter:search.movieSearch; let i=index">
+        <div class="card" >
+          <div class="card-body">
+            <img src="https://image.tmdb.org/t/p/original{{items.backdrop_path}}" class="card-img" alt="">
+            <h6 class="card-title" id="movie_title" >{{items.original_title}}</h6>
+            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+            <div class="button_action">
+              <button class="btn btn-primary" *ngIf="searchelement(items.id)!=1" (click)="onSaveFavourites(items)">Add
+                to Favourties</button>
+              <button class="btn btn-primary" *ngIf="searchelement(items.id)==1" (click)="onDelete(items.id)">Remove From
+                    Favourties</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='pagination'>
+    
+    <pagination-controls  id="listing_pagination" maxSize:any='5' directionLinks:any="true" (pageChange)="handlePageChange($event)" > </pagination-controls>
+  </div>
+  <!-- <nav aria-label="...">
+    <ul class="pagination pages">
+      <li class="page-item active"><a class="page-link" value=1>1</a></li>
+      <li class="page-item " aria-current="page">
+        <a class="page-link" value=2>2</a>
+      </li>
+      <li class="page-item"><a class="page-link" value=3>3</a></li>
+      <li class="page-item"><a class="page-link" value=4>4</a></li>
+      <li class="page-item"><a class="page-link" value=5>5</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#">Next</a>
+      </li>
+    </ul>
+  </nav> -->
+</div>
